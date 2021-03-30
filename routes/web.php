@@ -4,18 +4,33 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\front\FrontController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
 
 
-
+// front page
 Route::get('/', [FrontController::class, 'index']);
 Route::get('/index', [FrontController::class, 'index']);
 Route::get('/product_details/{id}', [FrontController::class, 'product_details']);
+Route::post('/addtocart', [FrontController::class, 'addtocart']);
+Route::get('/login', [FrontController::class, 'login'])->name('userlogin');
+
+// user
+Route::get('/login', [UserController::class, 'index'])->name('userlogin');
+Route::post('/auth', [UserController::class, 'auth'])->name('user.auth');
+Route::get('/logout', function () {
+    session()->forget('USER_LOGIN');
+    session()->forget('USER_ID');
+    return redirect('/');
+});
+Route::get('/user/dashboard', [UserController::class, 'dashboard']);
 
 
 
+
+// admin
 Route::get('admin', [AdminController::class, 'index']);
 Route::post('admin/auth', [AdminController::class, 'auth'])->name('admin.auth');
 

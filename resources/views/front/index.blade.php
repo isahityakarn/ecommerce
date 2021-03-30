@@ -1,6 +1,11 @@
 @extends('base')
 
+@section('myjs')
+
+@endsection
+
 @section('mybody')
+
     <section class="categories">
         <div class="container-fluid">
             <div class="row">
@@ -75,7 +80,13 @@
         </div>
     </section>
 
+    @if (Session::has('error'))
+        <script>
+            alert('After Login you can Add Product');
+            window.location.href = "/login";
 
+        </script>
+    @endif
 
     <!-- Product Section Begin -->
     <section class="product spad">
