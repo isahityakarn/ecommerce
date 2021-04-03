@@ -69,7 +69,7 @@
                 <nav class="header__menu ">
                     <ul>
                         <li class="active"><a href="/">Home</a></li>
-                        <li><a href="About Us.html">About Us</a></li>
+                        <li><a href="#">About Us</a></li>
                         <li><a href="/shop">Shop</a></li>
                         <li><a href="#">Products</a>
                             <ul class="dropdown">
@@ -84,7 +84,7 @@
                                 <li><a href="#">Tablets</a></li>
                             </ul>
                         </li>
-                        <li><a href="contact.html">Contact Us </a></li>
+                        <li><a href="#">Contact Us </a></li>
                         <li><a href="#">Blog </a></li>
                     </ul>
                 </nav>
@@ -93,28 +93,38 @@
                 <div class="header__right ">
 
                     <div class="row justify-content-center">
-                        <ul class="header__right__widget">
-                            @if (Session::has('USER_LOGIN'))
 
+                        @if (Session::has('USER_LOGIN'))
+                            <ul class="header__right__widget">
                                 <li><span class="icon_search search-switch"></span></li>
                                 <li>
-                                    <div class="w3-dropdown-hover">
+                                    <div class="w3-dropdown-hover" style="font-size: 15px;">
                                         <button class="w3-button"
                                             style="background-color: white;">{{ $data->name }}</button>
                                         <input type="hidden" name="user_id" value="{{ $data->id }}">
                                         <div class="w3-dropdown-content w3-bar-block w3-border">
-                                            <a href="/logout" class="w3-bar-item w3-button">Logout</a>
+                                            <a href="/logout" class="w3-bar-item w3-button"
+                                                style="font-size: 15px;">Logout</a>
                                         </div>
                                     </div>
                                 </li>
-                                <li><a href="/user/dashboard">Dashboard</a></li>
+                                <li><a href="/user/dashboard" style="font-size: 15px;">Dashboard</a></li>
+                                <li><a href="#"><span class="icon_heart_alt"></span>
+                                        <div class="tip">2</div>
+                                    </a></li>
+                                <li><a href="/shopcart"><span class="icon_bag_alt"></span>
+                                        <div class="tip">{{ $c }}</div>
+                                    </a></li>
+                            </ul>
 
-                            @else
+                        @else
+                            <ul class="header__right__widget">
                                 <li><span class="icon_search search-switch"></span></li>
                                 <li><a href="{{ route('userlogin') }}">Login</a></li>
-                                <li><a href="">Register</a></li>
-                            @endif
-                        </ul>
+                                <li><a href="/register">Register</a></li>
+                            </ul>
+                        @endif
+
                     </div>
 
                 </div>
@@ -247,10 +257,6 @@
                         <p> Phone Number:-0172-4680800, 8288814523<br>
                             E-mail: - marketing@indswift.com
                         </p>
-                        <!-- <form action="#">
-                                                                                                                                                                                                                                                                <input type="text" placeholder="Email">
-                                                                                                                                                                                                                                                                <button type="submit" class="site-btn">Subscribe</button>
-                                                                                                                                                                                                                                                            </form> -->
                         <div class="footer__social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>

@@ -1,11 +1,7 @@
 @extends('base')
-
 @section('myjs')
-
 @endsection
-
 @section('mybody')
-
     <section class="categories">
         <div class="container-fluid">
             <div class="row">
@@ -30,10 +26,7 @@
                     <script type="text/javascript" src="{{ asset('assets/engine1/wowslider.js') }}"></script>
                     <script type="text/javascript" src="{{ asset('assets/engine1/script.js') }}"></script>
                     <!-- End WOWSlider.com BODY section -->
-
                 </div>
-
-
                 <div class="col-lg-6">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 p-0">
@@ -42,7 +35,7 @@
                                 <div class="categories__text">
                                     <h4> Dengue Syrup</h4>
 
-                                    <a href="shop.html">Shop now</a>
+                                    <a href="/product_details/19">Shop now</a>
                                 </div>
                             </div>
                         </div>
@@ -51,7 +44,7 @@
                                 data-setbg="{{ asset('assets/img/categories/category-3.png') }}">
                                 <div class="categories__text">
                                     <h4>Majitrich <br> Hair Oil</h4>
-                                    <a href="shop.html">Shop now</a>
+                                    <a href="/product_details/10">Shop now</a>
                                 </div>
                             </div>
                         </div>
@@ -61,7 +54,7 @@
                                 <div class="categories__text">
                                     <h4>Oliade Oil</h4>
 
-                                    <a href="shop2.html">Shop now</a>
+                                    <a href="/product_details/11">Shop now</a>
                                 </div>
                             </div>
                         </div>
@@ -70,7 +63,7 @@
                                 data-setbg="{{ asset('assets/img/categories/category-5.png') }}">
                                 <div class="categories__text">
                                     <h4>Brain-O-Fit<br>-Syrup</h4>
-                                    <a href="shop2.html">Shop now</a>
+                                    <a href="/product_details/18">Shop now</a>
                                 </div>
                             </div>
                         </div>
@@ -130,8 +123,7 @@
                                     <i class="fa fa-star"></i>
                                 </div>
                                 <div class="product__price"><i class="fa fa-rupee">&nbsp;</i> 59.0</div>
-                                <a href="/product_details/{{ $item->id }}" class="btn btn-block btn-dark">Product
-                                    Details</a>
+                                <a href="/product_details/{{ $item->id }}" class="btn btn-block btn-dark">Shop Now</a>
                             </div>
                         </div>
                     </div>

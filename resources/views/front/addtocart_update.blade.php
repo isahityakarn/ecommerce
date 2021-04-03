@@ -20,8 +20,10 @@
     <!-- Product Details Section Begin -->
 
     <section class="product-details spad">
-        <form action="/addtocart" method="POST">
+        <form action="/addtocart_update_submit" method="POST">
             @csrf
+            <input type="hidden" name="user_id" value="{{ $data->id }}">
+            <input type="hidden" name="id" value="{{ $addtocart->id }}">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
@@ -85,7 +87,7 @@
                                 <div class="quantity">
                                     <span>Quantity:</span>
                                     <div class="pro-qty">
-                                        <input type="text" name="qty" value="1">
+                                        <input type="text" name="qty" value="{{ $addtocart->qty }}">
                                     </div>
                                 </div>
                                 {{-- <a href="#" class="cart-btn"><span class="icon_bag_alt"></span> Add to cart</a> --}}
